@@ -1,15 +1,12 @@
 #NaverApi 클래스 - OpenApi : 인터넷을 통해 데이터 전달받음
-import os
-import sys
 from urllib.request import Request,urlopen
 from urllib.parse import quote
 import datetime
-import time
 import json
 class NaverApi:
     # 생성자
     def __init__(self) -> None:
-        print('Naver API Search 생성')
+        print(f'[{datetime.datetime.now()}] Naver API Search 생성')
 
     # NaverAPI를 요청
     def getRequestUrl(self,url):
@@ -42,14 +39,3 @@ class NaverApi:
 
         if retData==None : return None
         else : return json.loads(retData) # json 으로 return
-
-    # json으로 받은 데이터-->list로 바꿔주는 역할
-    def getPostData(self,post,outputs):
-        title=post['title']
-        description = post['description']
-        originallink=post['originallink']
-        link=post['link']
-
-        #'Tue,07 Mar 2023 17:04:00 +0900' 과 같이 들어온걸 날짜형으로 변환해주는역할
-        pDate=datetime.datetime.strptime(post['pubDate'],'%a, %d %b %Y %H:%M:%S +0900')
-        pubDate=pDate.strftime('%Y-%m-%d %H:%M:%S') # 우리가 쓰는 형태로 다시 변환 ex)2023-03-07 17:04:00 변경
