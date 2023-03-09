@@ -23,6 +23,7 @@
   - Qt Designer
   - Urllib 이미지 다운로드 사용
 
+<img src="https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/naver_movie2.png" width="780">
 
 ## DB연동 GUI 개발 학습
 
