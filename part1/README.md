@@ -26,5 +26,16 @@
 <img src="https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/naver_movie2.png" width="780">
 
 ## DB연동 GUI 개발 학습
+- 주소록 앱 만들기
+  - Python 3.11.2
+  - MySQL 8.0 연동
+  - pymysql 모듈 사용
+  - PyQt5 / Qt Designer
+
+![주소록앱1]()
+![주소록앱2]()
+![주소록앱3]()
+![주소록앱4]()
+![주소록앱5]()
 
 ## 미니프로젝트 실습

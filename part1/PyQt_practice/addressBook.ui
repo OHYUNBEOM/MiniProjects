@@ -6,9 +6,27 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>480</height>
+    <width>600</width>
+    <height>400</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>600</width>
+    <height>400</height>
+   </size>
   </property>
   <property name="font">
    <font>
@@ -24,7 +42,7 @@
      <rect>
       <x>20</x>
       <y>20</y>
-      <width>601</width>
+      <width>571</width>
       <height>151</height>
      </rect>
     </property>
@@ -150,10 +168,10 @@
        <widget class="QPushButton" name="btnNew">
         <property name="geometry">
          <rect>
-          <x>416</x>
+          <x>387</x>
           <y>100</y>
-          <width>81</width>
-          <height>31</height>
+          <width>80</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="text">
@@ -163,14 +181,31 @@
        <widget class="QPushButton" name="btnSave">
         <property name="geometry">
          <rect>
-          <x>500</x>
+          <x>471</x>
           <y>100</y>
-          <width>81</width>
-          <height>31</height>
+          <width>80</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="text">
          <string>저장</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnDel">
+        <property name="geometry">
+         <rect>
+          <x>471</x>
+          <y>27</y>
+          <width>80</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:rgb(255,70,70);
+color:rgb(255,255,255);</string>
+        </property>
+        <property name="text">
+         <string>삭제</string>
         </property>
        </widget>
       </widget>
@@ -182,8 +217,8 @@
      <rect>
       <x>20</x>
       <y>180</y>
-      <width>601</width>
-      <height>281</height>
+      <width>571</width>
+      <height>201</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
