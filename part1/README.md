@@ -31,8 +31,10 @@
   - MySQL 8.0 연동
   - pymysql 모듈 사용
   - PyQt5 / Qt Designer
-
+- 신규등록
 ![주소록앱1](https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/addressbook1.png)
+- 주소록 수정
 ![주소록앱2](https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/addressbook2.png)
+- 
 ![주소록앱3](https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/addressbook3.png)
 ## 미니프로젝트 실습
