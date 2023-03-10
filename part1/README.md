@@ -32,10 +32,10 @@
   - pymysql 모듈 사용
   - PyQt5 / Qt Designer
 
-![주소록앱1]()
-![주소록앱2]()
-![주소록앱3]()
-![주소록앱4]()
-![주소록앱5]()
+![주소록앱1](https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/address_gui1.png)
+![주소록앱2](https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/address_gui2.png)
+![주소록앱3](https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/address_gui3.png)
+![주소록앱4](https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/address_gui4.png)
+![주소록앱5](https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/address_gui5.png)
 
 ## 미니프로젝트 실습
