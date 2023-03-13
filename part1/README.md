@@ -37,4 +37,17 @@
 ![주소록앱2](https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/addressbook2.png)
 - 주소록 삭제
 ![주소록앱3](https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/addressbook3.png)
+
+## 파이썬 관련 추가학습
+- QR 코드 생성 앱
+  - qrCode 모듈
+![QR코드생성앱]()
+
+
+- 컴퓨터 정보출력 앱
+  - psutil 모듈 사용
+  - socket 모듈 사용
+  - requests 모듈 사용
+![PC정보출력앱]()
+
 ## 미니프로젝트 실습
