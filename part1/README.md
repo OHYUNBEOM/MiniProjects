@@ -41,13 +41,13 @@
 ## 파이썬 관련 추가학습
 - QR 코드 생성 앱
   - qrCode 모듈
-![QR코드생성앱]()
+![QR코드생성앱](https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/MakeQRApp.png)
 
 
 - 컴퓨터 정보출력 앱
   - psutil 모듈 사용
   - socket 모듈 사용
   - requests 모듈 사용
-![PC정보출력앱]()
+![PC정보출력앱](https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/comInfo.png)
 
 ## 미니프로젝트 실습
