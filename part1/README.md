@@ -48,6 +48,7 @@
   - psutil 모듈 사용
   - socket 모듈 사용
   - requests 모듈 사용
+
 ![PC정보출력앱](https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/comInfo.png)
 
 ## 미니프로젝트 실습
