@@ -61,9 +61,16 @@
 
 - Thread 사용
   - GUI 처리시간이 긴 로직 실행 시 반드시 Thread 사용
-![Thread앱]()
+![Thread앱](https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/thread.png)
 
 - 이메일 보내기앱
   - 이메일 전송
   - 대량메일(스팸) 전송
+
+- PyGame
+
 ## 미니프로젝트 실습
+- BuSTOP!
+  - 버스 승객 대기 시스템 만들기
+
+[팀리포지토리](https://github.com/orgs/PKNU-IOT3/repositories)
