@@ -82,6 +82,8 @@
 
 <img src="https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/university_folium.png" width="780">
 
+- 계산기 앱
+  -PyQt
 
 ## 미니프로젝트 실습
 - BuSTOP!
