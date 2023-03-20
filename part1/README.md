@@ -90,5 +90,5 @@
 - BuSTOP!
   - 버스 승객 대기 시스템 만들기
 
-[팀리포지토리](https://github.com/orgs/PKNU-IOT3/repositories)
+[팀리포지토리(ReadME)](https://github.com/PKNU-IOT3/bustop_pyqt_practice)
 
