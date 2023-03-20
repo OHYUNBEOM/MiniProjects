@@ -84,6 +84,7 @@
 
 - 계산기 앱
   -PyQt
+<img src="https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/calculator.png" width="600">
 
 ## 미니프로젝트 실습
 - BuSTOP!
