@@ -83,7 +83,8 @@
 <img src="https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/university_folium.png" width="780">
 
 - 계산기 앱
-  -PyQt
+  - PyQt
+  - 16개의 signal을 1개의 slot함수로 처리하도록 구현
 <img src="https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/calculator.png" width="600">
 
 ## 미니프로젝트 실습
