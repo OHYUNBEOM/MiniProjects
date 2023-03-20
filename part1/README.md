@@ -71,6 +71,11 @@
   - PyGame
 
 <img src="https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/dinorun_1.png" width="780">
+<img src="https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/dinorun1.png" width="780">
+<img src="https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/dinorun2.png" width="780">
+<img src="https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/dinorun3.png" width="780">
+
+
 
 ## 미니프로젝트 실습
 - BuSTOP!

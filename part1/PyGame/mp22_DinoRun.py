@@ -7,7 +7,8 @@ pygame.init()
 
 ASSETS='./PyGame/Assets/' #경로 계속 적기 귀찮으니까 하나의 변수로 지정
 SCREEN_WIDTH=1100 # 게임 윈도우 넓이 
-SCREEN=pygame.display.set_mode((SCREEN_WIDTH,600))
+SCREEN_HEIGHT=600
+SCREEN=pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
 
 # form 상단에 나오는 이름 / 이미지 출력
 pygame.display.set_caption('다이노 런')
@@ -16,6 +17,7 @@ pygame.display.set_icon(icon)
 
 bg=pygame.image.load(os.path.join(f'{ASSETS}Other','Track.png'))
 
+#공룡 이미지
 #뛰는 모션 / 애니메이션
 RUNNING = [pygame.image.load(f'{ASSETS}Dino/DinoRun1.png'),
            pygame.image.load(f'{ASSETS}Dino/DinoRun2.png')]
@@ -26,6 +28,10 @@ DUCKING = [pygame.image.load(f'{ASSETS}Dino/DinoDuck1.png'),
 
 #점프 모션
 JUMPING = pygame.image.load(f'{ASSETS}Dino/DinoJump.png') # 점프는 사진 하나라 배열로 선언X
+
+#시작이미지/종료 이미지
+START=pygame.image.load(f'{ASSETS}Dino/DinoStart.png')
+DEAD=pygame.image.load(f'{ASSETS}Dino/DinoDead.png')
 
 #구름이미지
 CLOUD = pygame.image.load(f'{ASSETS}Other/Cloud.png')
@@ -152,7 +158,8 @@ class Obstacle:
     def draw(self,SCREEN)->None:
         SCREEN.blit(self.image[self.type],self.rect)
 
-class Bird(Obstacle): #장애물 클래스 상속클래스
+#장애물 클래스 상속클래스(익룡)
+class Bird(Obstacle): 
     def __init__(self, image) -> None:
         self.type=0 # 새는 0
         super().__init__(image,self.type)
@@ -165,6 +172,7 @@ class Bird(Obstacle): #장애물 클래스 상속클래스
         SCREEN.blit(self.image[self.index//5],self.rect)
         self.index+=1
 
+#장애물 (선인장)
 class LargeCactus(Obstacle):
     def __init__(self, image) -> None:
         self.type=random.randint(0,2) # 큰 선인장 세가지 종류
@@ -178,7 +186,7 @@ class SmallCactus(Obstacle):
         self.rect.y=325
 
 def main():
-    global game_speed, x_pos_bg , y_pos_bg, points , obstacles
+    global game_speed, x_pos_bg , y_pos_bg, points , obstacles , font 
     x_pos_bg = 0
     y_pos_bg = 380
     points=0 # 게임 점수
@@ -188,6 +196,7 @@ def main():
     cloud = Cloud() # 구름 객체 생성
     game_speed = 14
     obstacles=[]
+    death_count = 0
 
     font=pygame.font.Font(f'{ASSETS}NanumGothicBold.ttf',size=20)
 
@@ -242,12 +251,49 @@ def main():
         for obs in obstacles:
             obs.draw(SCREEN)
             obs.update()
-            #Collision Detection
+            #Collision Detection 충돌 감지 시 게임 종료
             if dino.dino_rect.colliderect(obs.rect): # 장애물에 부딪히면 표시
-                pygame.draw.rect(SCREEN,(255,0,0),dino.dino_rect,3)
+                #pygame.draw.rect(SCREEN,(255,0,0),dino.dino_rect,3)
+                pygame.time.delay(300) #1.5초 딜레이 생성
+                death_count +=1 #죽음
+                menu(death_count) #메인 메뉴화면으로 전환
 
         clock.tick(30)
         pygame.display.update() # 초당 30번 update 수행함
 
+#메뉴함수
+def menu(death_count): 
+    global points, font
+    run = True
+    font=pygame.font.Font(f'{ASSETS}NanumGothicBold.ttf',size=20)
+
+    while run:
+        SCREEN.fill((255,255,255))
+        #최초 상태(죽지않은)
+        if death_count == 0 :
+            text=font.render('시작하려면 아무 키나 누르세요',True,(83,83,83))
+            SCREEN.blit(START,(SCREEN_WIDTH//2-20,SCREEN_HEIGHT//2-140))
+        #죽음
+        elif death_count >0:
+            text=font.render('재시작하려면 아무키나 누르세요',True,(83,83,83))
+            score=font.render(f'SCORE : {points}',True,(83,83,83))
+            scoreRect=score.get_rect() # 변경되는 점수를 사각형 영역으로 잡아서 처리
+            scoreRect.center=(SCREEN_WIDTH//2,SCREEN_HEIGHT//2+50) #점수 표시를 위해 Y좌표 50만큼 더 내림
+            SCREEN.blit(score,scoreRect)
+            SCREEN.blit(DEAD,(SCREEN_WIDTH//2-20,SCREEN_HEIGHT//2-140))
+
+        textRect=text.get_rect()
+        textRect.center = (SCREEN_WIDTH//2,SCREEN_HEIGHT//2)
+        SCREEN.blit(text,textRect) #text를 textRect위치에 그려줌
+        pygame.display.update()
+
+        #pygame에서 event 발생시(키보드 클릭 등) 
+        for event in pygame.event.get():
+            if event.type==pygame.QUIT:
+                run=False
+                pygame.quit()
+            if event.type==pygame.KEYDOWN:
+                main()
+
 if __name__=='__main__':
-    main()
+    menu(death_count=0)
