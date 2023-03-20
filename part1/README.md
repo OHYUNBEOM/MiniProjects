@@ -75,6 +75,12 @@
 <img src="https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/dinorun2.png" width="780">
 <img src="https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/dinorun3.png" width="780">
 
+- 전국 대학교 위치맵
+  - Folium
+  - PyQt
+    - QWebEngineView 추가
+
+<img src="https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/university_folium.png" width="780">
 
 
 ## 미니프로젝트 실습
