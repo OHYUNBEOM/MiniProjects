@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BogusTestApp", "BogusTestApp\BogusTestApp.csproj", "{0AE457AC-4544-4552-AA8C-70F9BFA71067}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{660FAA93-B344-471C-9265-0C43B96A57F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simulation", "Simulation", "{16FEA13D-F6D6-4CE9-B5B3-D1B50BEDA720}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AE457AC-4544-4552-AA8C-70F9BFA71067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AE457AC-4544-4552-AA8C-70F9BFA71067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AE457AC-4544-4552-AA8C-70F9BFA71067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AE457AC-4544-4552-AA8C-70F9BFA71067}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0AE457AC-4544-4552-AA8C-70F9BFA71067} = {660FAA93-B344-471C-9265-0C43B96A57F0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {16805E7C-C085-4964-A84A-245B426FA719}
+	EndGlobalSection
+EndGlobal
