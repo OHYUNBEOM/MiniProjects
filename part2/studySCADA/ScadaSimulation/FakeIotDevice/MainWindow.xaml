@@ -7,7 +7,8 @@
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:local="clr-namespace:FakeIotDevice"
         mc:Ignorable="d"
-        Title="Fake IOT Device" Height="500" Width="580" MinHeight="400" MinWidth="500" Closing="MetroWindow_Closing">
+        Title="Fake IOT Device" Height="500" Width="580" MinHeight="400" MinWidth="500" Closing="MetroWindow_Closing"
+                 Loaded="MetroWindow_Loaded">
     <mah:MetroWindow.IconTemplate>
         <DataTemplate>
             <iconPacks:PackIconSimpleIcons Kind="EclipseMosquitto" Foreground="White"
@@ -28,7 +29,13 @@
                     Style="{StaticResource MahApps.Styles.Button.Square.Accent}" Click="BtnConnect_Click"/>
         </StackPanel>
 
-        <RichTextBox Grid.Row="1" x:Name="RtbLog" Margin="10" VerticalScrollBarVisibility="Visible"/>
+        <RichTextBox Grid.Row="1" x:Name="RtbLog" Margin="10" VerticalScrollBarVisibility="Visible">
+            <RichTextBox.Resources>
+                <Style TargetType="{x:Type Paragraph}">
+                    <Setter Property="Margin" Value="0"/>
+                </Style>
+            </RichTextBox.Resources>
+        </RichTextBox>
 
     </Grid>
 </mah:MetroWindow>
