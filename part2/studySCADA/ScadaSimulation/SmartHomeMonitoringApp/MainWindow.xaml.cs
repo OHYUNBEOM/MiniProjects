@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MahApps.Metro.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MahApps.Metro.Controls;
-using SmartHomeMonitoringApp.Views;
 using System.Diagnostics;
+using SmartHomeMonitoringApp.Views;
 
 namespace SmartHomeMonitoringApp
 {
@@ -30,16 +30,29 @@ namespace SmartHomeMonitoringApp
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            // <Frame> -> '페이지'로 만들고
-            // <ContentControl> -> '사용자 정의 컨트롤로 만듬
-            // 즉 ContentControl로 만들면 다른 곳에서 편하게 불러다 사용가능
-            ActiveItem.Content=new Views.DataBaseControl(); 
+            // <Frame. ==> Page.xaml
+            // <ContentControl> ==> UserControl.xaml
+            // ActiveItem.Content = new Views.DataBaseControl();
         }
-        //끝내기
+
         private void MnuExitProgram_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.GetCurrentProcess().Kill();//작업관리자에서 프로그램 종료와 같은 역할
-            Environment.Exit(0); //40행,41행 둘중 하나만 쓰면됨
+            Process.GetCurrentProcess().Kill(); // 작업관리자에서 프로세스 종료
+            Environment.Exit(0);    // 둘중하나만 쓰면됨
+        }
+
+        // MQTT 시작메뉴 클릭이벤트 핸들러
+        private void MnuStartSubscribe_Click(object sender, RoutedEventArgs e)
+        {
+            var mqttPopWin = new MqttPopupWindow();
+            mqttPopWin.Owner = this;
+            mqttPopWin.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            var result = mqttPopWin.ShowDialog();
+
+            if(result == true)
+            {
+                ActiveItem.Content = new Views.DataBaseControl();
+            }
         }
     }
 }

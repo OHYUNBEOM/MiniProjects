@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FakeIotDevice.Properties
+namespace FakeIotDeviceApp.Properties
 {
 
 

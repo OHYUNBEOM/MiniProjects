@@ -1,20 +1,7 @@
 ﻿using BogusTestApp.Models;
 using MahApps.Metro.Controls;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace BogusTestApp
 {
@@ -30,11 +17,16 @@ namespace BogusTestApp
 
         private void BtnGenDummyData_Click(object sender, RoutedEventArgs e)
         {
-            var repo = new SampleCustomerRepo();
-            var customers = repo.GetCustomers();
+            var repo = new SampleCustomerRepository();
+            var customers = repo.GetCustomers(1000);
             var result = JsonConvert.SerializeObject(customers, Formatting.Indented);
-            TbxResult.Text =result;
 
+            RtbResult.Text = result;
+        }
+
+        private void BtnReset_Click(object sender, RoutedEventArgs e)
+        {
+            RtbResult.Clear();
         }
     }
 }
