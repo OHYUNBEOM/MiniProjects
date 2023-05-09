@@ -14,7 +14,7 @@ namespace SmartHomeMonitoringApp.Logics
 
         public static string MQTTTOPIC { get; set; } = "SmartHome/IotData/";
 
-        public static string MYSQL_CONNSTRING { get; set; } = "Sever=localhost;" +
+        public static string MYSQL_CONNSTRING { get; set; } = "Server=localhost;" +
                                                 "Port=3306;" +
                                                 "Database=miniproject;" +
                                                 "Uid=root;" +

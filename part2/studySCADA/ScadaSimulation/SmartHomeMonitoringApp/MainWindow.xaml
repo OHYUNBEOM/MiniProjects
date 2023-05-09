@@ -8,7 +8,8 @@
     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     xmlns:local="clr-namespace:SmartHomeMonitoringApp"
     mc:Ignorable="d"
-    Title="SmartHome Monitoring System" Height="450" Width="800" Loaded="MetroWindow_Loaded" >
+    Title="SmartHome Monitoring System" Height="450" Width="800" 
+    Loaded="MetroWindow_Loaded" Closing="MetroWindow_Closing">
     <mah:MetroWindow.IconTemplate>
         <DataTemplate>
             <iconPacks:PackIconSimpleIcons Kind="HomeAssistant" Width="24"
@@ -33,11 +34,6 @@
                     <MenuItem x:Name="MnuStartSubscribe" Header="시작" Click="MnuStartSubscribe_Click">
                         <MenuItem.Icon>
                             <iconPacks:PackIconJamIcons Kind="PlayCircleF" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem x:Name="MnuStopSubscribe" Header="중지">
-                        <MenuItem.Icon>
-                            <iconPacks:PackIconBootstrapIcons Kind="PauseCircleFill" />
                         </MenuItem.Icon>
                     </MenuItem>
                     <Separator />
@@ -85,14 +81,11 @@
 
             <ToolBarTray>
                 <ToolBar Style="{StaticResource MahApps.Styles.ToolBar}">
-                    <Button x:Name="BtnStartSubscribe" ToolTip="구독시작">
+                    <Button x:Name="BtnStartSubscribe" ToolTip="구독 시작" Click="MnuStartSubscribe_Click">
                         <iconPacks:PackIconJamIcons Kind="PlayCircleF"/>
                     </Button>
-                    <Button x:Name="BtnStopSubscribe" ToolTip="구독종료">
-                        <iconPacks:PackIconBootstrapIcons Kind="PauseCircleFill"/>
-                    </Button>
                     <Separator />
-                    <Button x:Name="BtnExitProgram" ToolTip="종료">
+                    <Button x:Name="BtnExitProgram" ToolTip="프로그램 종료" Click="BtnExitProgram_Click">
                         <iconPacks:PackIconForkAwesome Kind="SignOut"/>
                     </Button>
                 </ToolBar>

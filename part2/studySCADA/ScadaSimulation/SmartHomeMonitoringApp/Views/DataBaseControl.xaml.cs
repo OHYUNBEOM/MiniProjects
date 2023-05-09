@@ -63,18 +63,34 @@ namespace SmartHomeMonitoringApp.Views
                             new byte[] { MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE });
                         UpdateLog(">>> MQTT Broker Connected");
                         BtnConnDb.IsChecked = true;
+                        BtnConnDb.Content = "MQTT 연결중";
                         isConnected = true;
                     }
                 }
-                catch
+                catch(Exception ex)
                 {
-                    // Pass
+                    UpdateLog($"!! MQTT Error 발생 : {ex.Message}");
                 }
             }
             else
             {
-                BtnConnDb.IsChecked = false;
-                isConnected = false;
+                try
+                {
+                    if (Commons.MQTT_CLIENT.IsConnected)
+                    {
+                        Commons.MQTT_CLIENT.MqttMsgPublishReceived -= MqttMsgPublishReceived;
+                        Commons.MQTT_CLIENT.Disconnect();
+                        UpdateLog(">>> MQTT Broker Disconnected...");
+
+                        BtnConnDb.IsChecked = false;
+                        BtnConnDb.Content = "MQTT 연결종료";
+                        isConnected = false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    UpdateLog($"!! MQTT Error 발생 : {ex.Message}");
+                }
             }
         }
 
@@ -110,23 +126,38 @@ namespace SmartHomeMonitoringApp.Views
                     using(MySqlConnection conn = new MySqlConnection(Commons.MYSQL_CONNSTRING))
                     {
                         if (conn.State == System.Data.ConnectionState.Closed) conn.Open();
-                        string insQuery = "INSERT INTO smarthomesensor ... ";
+                        string insQuery = @"INSERT INTO smarthomesensor
+                                            (Home_Id,
+                                            Room_Name,
+                                            Sensing_DateTime,
+                                            Temp,
+                                            Humid)
+                                            VALUES
+                                            (@Home_Id,
+                                            @Room_Name,
+                                            @Sensing_DateTime,
+                                            @Temp,
+                                            @Humid)";
                         MySqlCommand cmd = new MySqlCommand(insQuery, conn);
                         cmd.Parameters.AddWithValue("@Home_Id", currValue["Home_Id"]);
+                        cmd.Parameters.AddWithValue("@Room_Name", currValue["Room_Name"]);
+                        cmd.Parameters.AddWithValue("@Sensing_DateTime", currValue["Sensing_DateTime"]);
+                        cmd.Parameters.AddWithValue("@Temp", currValue["Temp"]);
+                        cmd.Parameters.AddWithValue("@Humid", currValue["Humid"]);
                         // ... 파라미터 5개
-                        if(cmd.ExecuteNonQuery()==1)
+                        if (cmd.ExecuteNonQuery()==1)
                         {
                             UpdateLog(">>> DB Insert 성공");
                         }
                         else
                         {
-                            UpdateLog(">>> Db Insert 실패");
+                            UpdateLog(">>> DB Insert 실패");
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    UpdateLog($"!! Error 발생 : {ex.Message}");
+                    UpdateLog($"!! DB Error 발생 : {ex.Message}");
                 }
             }
         }
