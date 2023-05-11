@@ -32,6 +32,8 @@ namespace FakeIotDeviceApp
         MqttClient Client { get; set; }
         Thread MqttThread {get;set;}
 
+        int MaxCount { get; set; } = 50;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -88,6 +90,18 @@ namespace FakeIotDeviceApp
                         // RtbLog에 출력
                         RtbLog.AppendText($"{jsonValue}\n");
                         RtbLog.ScrollToEnd();   // 스크롤 제일 밑으로 보내기
+                        MaxCount--;
+                        if(MaxCount<=0)
+                        {
+                            RtbLog.SelectAll();
+                            RtbLog.Selection.Text=string.Empty;
+                            MaxCount = 50;
+                            RtbLog.AppendText(">>> 문서건수 증가로 초기화\n");
+                        }
+                        //RtbLog에 출력
+                        RtbLog.AppendText($"{jsonValue}\n");
+                        RtbLog.ScrollToEnd();
+                        MaxCount--;
                     }));
                     // 1초동안 대기
                     Thread.Sleep(1000);

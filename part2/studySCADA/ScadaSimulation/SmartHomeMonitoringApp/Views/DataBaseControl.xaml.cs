@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,6 +28,10 @@ namespace SmartHomeMonitoringApp.Views
     public partial class DataBaseControl : UserControl
     {
         public bool isConnected { get; set; }
+        Thread MqttThread { get; set; }
+
+        //MQTT Subscribtion text 과도 문제 속도저하 잡기위한 변수
+        int MaxCount { get; set; } = 50;
 
         public DataBaseControl()
         {
@@ -111,8 +116,17 @@ namespace SmartHomeMonitoringApp.Views
         {
             //예외처리 필요
             this.Invoke(()=>{
+                if(MaxCount<=0)
+                {
+                    TxtLog.Text = string.Empty;
+                    TxtLog.Text += "문서건수 증가로 인한 초기화\n";
+                    TxtLog.ScrollToEnd();
+                    MaxCount = 50;
+                }
+
                 TxtLog.Text += $"{msg}\n";
                 TxtLog.ScrollToEnd();
+                MaxCount--;
             });
         }
         //Subscribe가 발생할 때 이벤트 핸들러
