@@ -12,11 +12,23 @@
   - LiveChart
   - OxyChart
 
-온습도 더미데이터 시뮬레이터
-이미지 -> FakeIoTDeviceApp 실행화면
+### 온습도 더미데이터 시뮬레이터
 
-스마트홈 모니터링 앱
-이미지 -> 메인화면
-이미지 -> 실시간 모니터링
+![](https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/FakeIotDeviceApp.png)
 
-스마트홈 모니터링 시각화
+### 스마트홈 모니터링 앱
+- #### MySQL
+![](https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/SmartHomeMySQL.png)
+- #### 메인 화면
+![](https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/SmartHomeMain.png)
+- #### DB 모니터링
+![](https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/SmartHomeDBMon.png)
+- #### 실시간 모니터링
+![](https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/SmartHomeRealTime.png)
+- #### 모니터링 시각화
+![](https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/SmartHomeVisualization.png)
+- #### About Program
+![](https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/SmartHomeAbout.png)
+
+### 실행화면
+![](https://raw.githubusercontent.com/OHYUNBEOM/MiniProjects/main/images/SmartHome.gif)
